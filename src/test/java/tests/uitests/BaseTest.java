@@ -7,10 +7,7 @@ import factorydriver.DriverType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 
@@ -20,7 +17,7 @@ public class BaseTest {
     WebDriver driver;
     DriverManager driverManager;
 
-    @BeforeTest
+    @BeforeClass
     @Parameters({"browser"})
     public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
 
@@ -40,7 +37,7 @@ public class BaseTest {
     public WebDriver getDriver() {
         return driver;
     }
-    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void quiteBrowser() {
         driverManager.quitDriver();
     }
