@@ -25,7 +25,7 @@ public class BaseRestAssuredTest {
 
     @Test
     public void addNewPatient() {
-        String encoding = Base64.getEncoder().encodeToString((myData.getEmail() + ":" + myData.getPassword()).getBytes());
+       // String encoding = Base64.getEncoder().encodeToString((myData.getEmail() + ":" + myData.getPassword()).getBytes());
         AddPatientModel addPatientModel = new AddPatientModel();
         Phones phones = new Phones();
         phones.setNumber(GenerateFakeMessage.getAnyPhoneNumber());
@@ -35,17 +35,17 @@ public class BaseRestAssuredTest {
         addPatientModel.setRole(GenerateFakeMessage.getRolePatient());
         addPatientModel.setEmail(GenerateFakeMessage.getAnyEmail());
         addPatientModel.setPassword(GenerateFakeMessage.getAnyPassword());
+//        given()
+//                .when()
+//                .formParam("email", myData.getEmail())
+//                .formParam("password", myData.getPassword())
+//                .post(webUrl.getWecareapiUrl())
+//                .then()
+//                .log()
+//                .all()
+//                .statusCode(200);
         given()
-                .when()
-                .formParam("email", myData.getEmail())
-                .formParam("password", myData.getPassword())
-                .post(webUrl.getWecareapiUrl())
-                .then()
-                .log()
-                .all()
-                .statusCode(200);
-        given()
-                .header("Authorization", "Basic " + encoding)
+                //.header("Authorization", "Basic " + encoding)
                 .when()
                 .contentType(ContentType.JSON)
                 .log()
