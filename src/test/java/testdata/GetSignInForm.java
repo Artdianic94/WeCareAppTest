@@ -6,8 +6,8 @@ import utilities.GenerateFakeMessage;
 public class GetSignInForm {
     public static SignInFormModel getSignInForm(){
         return SignInFormModel.builder()
-                .email(GenerateFakeMessage.getAnyEmail())
-                .password(GenerateFakeMessage.getAnyPassword())
+                .email(GenerateFakeMessage.getSpecialEmail())
+                .password(GenerateFakeMessage.getSpecialPassword())
                 .build();
     }
 }

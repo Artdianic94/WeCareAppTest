@@ -23,4 +23,8 @@ public class Locators {
     public static final By PROFILE_LABEL = By.xpath("//h1[contains(.,'Profile')]");
     public static final String SIGN_IN_EMAIL_INPUT = "email";
     public static final String SIGN_IN_PASSWORD_INPUT = "password";
+    public static final By CALENDAR_BTN = By.xpath("//a[contains(.,'Calendar' )]");
+    public static final By CALENDAR_LABELS = By.xpath("//label");
+    public static final By LOG_OUT_BTN =By.xpath("//button[contains(.,'SignOut')]");
+    public static final By LOG_UP_CHOICE = By.xpath("//h3[contains(.,'Up')]");
 }

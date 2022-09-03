@@ -34,11 +34,14 @@ public class BaseTest {
         driverManager.setTimeout();
         System.getProperty("configuration");
     }
+
     public WebDriver getDriver() {
         return driver;
     }
+
     @AfterClass(alwaysRun = true)
     public void quiteBrowser() {
         driverManager.quitDriver();
     }
+
 }

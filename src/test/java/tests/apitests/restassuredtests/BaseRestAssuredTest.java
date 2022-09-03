@@ -9,6 +9,7 @@ import utilities.GenerateFakeMessage;
 
 import static io.restassured.RestAssured.given;
 
+
 public class BaseRestAssuredTest {
     WebUrl webUrl = new WebUrl();
 
@@ -35,5 +36,6 @@ public class BaseRestAssuredTest {
                 .log()
                 .all()
                 .statusCode(200);
+
     }
 }

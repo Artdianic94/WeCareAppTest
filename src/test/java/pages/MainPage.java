@@ -20,4 +20,8 @@ public class MainPage extends BasePage {
     public void switchToSignUpSignIn() {
         driver.findElement(Locators.MAIN_PAGE_BTN_SIGNUP_SIGNIN).click();
     }
+
+    public String signInSignUpChoice() {
+        return driver.findElement(Locators.LOG_UP_CHOICE).getText();
+    }
 }

@@ -7,9 +7,9 @@ import pages.PrivateAccountPage;
 import pages.SignInPage;
 import testdata.GetSignInForm;
 
-public class OpenPerAccAfterSignInTest extends BaseTest {
+public class LogOutTest extends BaseTest {
     @Test
-    public void openPerAccAfterSignInTest() {
+    public void logOutTest() {
         MainPage mainPage = new MainPage(driver);
         PrivateAccountPage privateAccountPage = new PrivateAccountPage(driver);
         mainPage.openMainPage();
@@ -18,8 +18,8 @@ public class OpenPerAccAfterSignInTest extends BaseTest {
         signInPage.openSignInForm();
         signInPage.fillOutSignInForm(GetSignInForm.getSignInForm());
         signInPage.submitSignIn();
-        String actualResult = privateAccountPage.openPrivateAccount();
-        String expectedResult = "Profile";
-        Assert.assertEquals(actualResult, expectedResult, "Personal Account hasn't opened");
+        privateAccountPage.logOut();
+        String actualResult = mainPage.signInSignUpChoice();
+        Assert.assertEquals(actualResult, "Sign Up", "User didn't log out");
     }
 }
