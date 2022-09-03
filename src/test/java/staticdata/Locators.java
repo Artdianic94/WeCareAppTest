@@ -6,4 +6,18 @@ public class Locators {
     public static final By MAIN_PAGE_INFO = By.xpath("//main/div/h1");
     public static final By MAIN_PAGE_BTN_SIGNUP_SIGNIN = By.xpath("//main/div/button");
     public static final By SIGNIN_SIGNUP_LABLES = By.xpath("//label");
+    public static final By SIGN_UP_FORM_BTN = By.xpath("//h3[contains(.,'Up' )]");
+    public static final String SIGN_UP_NAME_INPUT = "name";
+    public static final String SIGN_UP_EMAIL_INPUT = "email";
+    public static final String SIGN_UP_PHONE_INPUT = "phone";
+    public static final String SIGN_UP_PASSWORD_INPUT = "password";
+    public static final String SIGN_UP_CONFIRM_PASS_INPUT = "confirm";
+    public static final By SIGN_UP_ROLE_PATIENT_INPUT = By.id("patient");
+    public static final By SIGN_UP_ROLE_DOCTOR_INPUT = By.id("doctor");
+    public static final String SIGN_UP_PATIENT_BIRTHDATE_INPUT = "birthDate";
+    public static final String SIGN_UP_DOCTOR_SPECIALTY_INPUT = "specialty";
+    public static final String SIGN_UP_DOCTOR_DOCUMENT_INPUT = "document";
+    public static final By SAVE_SIGN_UP_BTN = By.xpath("//button[contains(.,'Su' )]");
+    public static final By RED_MESSAGES = By.xpath("//p");
+    public static final By SIGN_IN_FORM_BTN = By.xpath("//h3[contains(.,'In')]");
 }

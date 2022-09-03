@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class InputFields {
     WebDriver driver;
     String fieldName;
-    String inputXpath = "//input[@id='%s']";
+    String inputXpath = "%s";
 
     public InputFields(WebDriver driver, String fieldName) {
         this.driver = driver;
@@ -15,6 +15,6 @@ public class InputFields {
 
     public void inputText(String text) {
         inputXpath = String.format(inputXpath, fieldName);
-        driver.findElement(By.xpath(inputXpath)).sendKeys(text);
+        driver.findElement(By.id(inputXpath)).sendKeys(text);
     }
 }

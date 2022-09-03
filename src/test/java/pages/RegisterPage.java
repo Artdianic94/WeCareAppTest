@@ -23,7 +23,9 @@ public class RegisterPage extends BasePage {
 
     public List<String> fieldsShouldBeInSignUpForm() {
         List<String> labelsShouldBeInSignUpForm = new ArrayList<>();
+        labelsShouldBeInSignUpForm.add("Name");
         labelsShouldBeInSignUpForm.add("Email");
+        labelsShouldBeInSignUpForm.add("Phone");
         labelsShouldBeInSignUpForm.add("Password");
         labelsShouldBeInSignUpForm.add("Confirm your password");
         labelsShouldBeInSignUpForm.add("Choose your role:");

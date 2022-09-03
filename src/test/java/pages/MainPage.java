@@ -16,7 +16,8 @@ public class MainPage extends BasePage {
     public String getTheGreetingText() {
         return driver.findElement(Locators.MAIN_PAGE_INFO).getText();
     }
-    public void switchToSignUpSignIn(){
+
+    public void switchToSignUpSignIn() {
         driver.findElement(Locators.MAIN_PAGE_BTN_SIGNUP_SIGNIN).click();
     }
 }
