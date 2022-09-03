@@ -14,7 +14,7 @@ public class GenerateFakeMessage {
     }
 
     public static String getSpecialEmail() {
-        return "art@gmail.com";
+        return "da@gmail.com";
     }
 
     public static String getAnyEmail() {

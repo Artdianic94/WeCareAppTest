@@ -29,15 +29,15 @@ public class RegisterPage extends BasePage {
         labelsShouldBeInSignUpForm.add("Password");
         labelsShouldBeInSignUpForm.add("Confirm your password");
         labelsShouldBeInSignUpForm.add("Choose your role:");
-        labelsShouldBeInSignUpForm.add("Patient");
-        labelsShouldBeInSignUpForm.add("Doctor");
+        labelsShouldBeInSignUpForm.add("PATIENT");
+        labelsShouldBeInSignUpForm.add("DOCTOR");
         return labelsShouldBeInSignUpForm;
     }
 
     public boolean areAllRequiredFieldsInSignUpForm() {
         List<String> labelsOnSignUpPage = getAllFieldNamesInSignUpForm();
         List<String> labelsShouldBeInSignUpForm = fieldsShouldBeInSignUpForm();
-        boolean switchLabel = false;
+        boolean switchLabel = true;
         for (String s : labelsShouldBeInSignUpForm) {
             switchLabel = labelsOnSignUpPage.contains(s);
         }
