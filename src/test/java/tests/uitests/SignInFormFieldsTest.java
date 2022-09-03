@@ -12,7 +12,7 @@ public class SignInFormFieldsTest extends BaseTest {
         SignInPage signInPage = new SignInPage(driver);
         mainPage.openMainPage();
         mainPage.switchToSignUpSignIn();
-        signInPage.openSignUpForm();
+        signInPage.openSignInForm();
         boolean actualResult = signInPage.areAllRequiredFieldsInSignInForm();
         Assert.assertTrue(actualResult, "Field names in the Sign In form don't meet requirements");
     }

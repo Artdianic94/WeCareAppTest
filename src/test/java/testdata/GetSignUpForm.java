@@ -14,13 +14,12 @@ public class GetSignUpForm{
                 .build();
     }
     public static SignUpFormModel getSignUpFormWithData(){
-        String password = GenerateFakeMessage.getAnyPassword();
         return SignUpFormModel.builder()
-                .name(GenerateFakeMessage.getAnyFirstName())
+                .name(GenerateFakeMessage.getAnyFirstName()+" "+GenerateFakeMessage.getAnyLastName())
                 .email(GenerateFakeMessage.getAnyEmail())
                 .phone(GenerateFakeMessage.getAnyPhoneNumber())
-                .password(password)
-                .confirmPass(password)
+                .password(GenerateFakeMessage.getAnyPassword())
+                .confirmPass(GenerateFakeMessage.getAnyPassword())
                 .build();
     }
 }

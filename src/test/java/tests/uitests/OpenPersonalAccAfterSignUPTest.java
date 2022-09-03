@@ -3,14 +3,16 @@ package tests.uitests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.PrivateAccountPage;
 import pages.SignUpFullFormPage;
 import testdata.GetSignUpForm;
 import testdata.GetSignUpFormForPatient;
 
-public class OpenPersonalAccountTest extends BaseTest{
+public class OpenPersonalAccAfterSignUPTest extends BaseTest{
     @Test
     public void openPersonalAccountTest() {
         MainPage mainPage = new MainPage(driver);
+        PrivateAccountPage privateAccountPage = new PrivateAccountPage(driver);
         SignUpFullFormPage signUpFullFormPage = new SignUpFullFormPage(driver);
         mainPage.openMainPage();
         mainPage.switchToSignUpSignIn();
@@ -19,6 +21,8 @@ public class OpenPersonalAccountTest extends BaseTest{
         signUpFullFormPage.choosePatientRole();
         signUpFullFormPage.fillOutMainSignUpFormForPatient(GetSignUpFormForPatient.getSignUpFormWithDataForPatient());
         signUpFullFormPage.saveSignUpForm();
-        Assert.assertEquals(1,4,"");
+        String actualResult = privateAccountPage.openPrivateAccount();
+        String expectedResult = "Profile";
+        Assert.assertEquals(actualResult,expectedResult,"Personal Account hasn't opened");
     }
 }

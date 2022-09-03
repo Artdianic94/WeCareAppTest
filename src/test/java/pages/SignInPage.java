@@ -1,5 +1,8 @@
 package pages;
 
+import elements.InputFields;
+import models.uimodels.SignInFormModel;
+import models.uimodels.SignUpFormModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import staticdata.Locators;
@@ -11,7 +14,7 @@ public class SignInPage extends BasePage{
     public SignInPage(WebDriver driver) {
         super(driver);
     }
-    public void openSignUpForm(){
+    public void openSignInForm(){
         driver.findElement(Locators.SIGN_IN_FORM_BTN).click();
     }
     public List<String> getAllFieldNamesInSignInForm() {
@@ -36,5 +39,12 @@ public class SignInPage extends BasePage{
             switchLabel = labelsOnSignInPage.contains(s);
         }
         return switchLabel;
+    }
+    public void fillOutSignInForm(SignInFormModel signInFormModel){
+        new InputFields(driver, Locators.SIGN_IN_EMAIL_INPUT).inputText(signInFormModel.getEmail());
+        new InputFields(driver,Locators.SIGN_IN_PASSWORD_INPUT).inputText(signInFormModel.getPassword());
+    }
+    public void submitSignIn(){
+        driver.findElement(Locators.SAVE_SIGN_UP_BTN).click();
     }
 }

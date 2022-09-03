@@ -12,23 +12,18 @@ public class GenerateFakeMessage {
         return faker.name().lastName();
     }
     public static String getAnyEmail() {
-        Faker faker = new Faker();
-        return faker.internet().emailAddress();
+        return "diart@yopmail.com";
     }
-    public static int getAnyId() {
-        Faker faker = new Faker();
-        return faker.number().numberBetween(0,1000);
-    }
+
     public static String getAnyPhoneNumber() {
-        Faker faker = new Faker();
-        return faker.phoneNumber().subscriberNumber(10);
+        return "+375293555555";
     }
     public static String getRolePatient(){
         return "PATIENT";
     }
+    public static String getRoleDoctor(){return "DOCTOR";}
     public static String getAnyPassword(){
-        Faker faker = new Faker();
-        return faker.internet().password(5,10);
+        return "12345";
     }
     public static String getDoctorSpeciality(){
         Faker faker = new Faker();
@@ -39,7 +34,9 @@ public class GenerateFakeMessage {
         return faker.internet().password(5,10);
     }
     public static String getAnyBirthDate(){
-        Faker faker = new Faker();
-        return faker.date().toString();
+        return "20071994";
+    }
+    public static String getBirthDateForAPI(){
+        return "2022-09-03";
     }
 }
